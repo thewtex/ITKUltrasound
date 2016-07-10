@@ -382,8 +382,7 @@ protected:
   virtual void PrintSelf(std::ostream & os, Indent indent) const ITK_OVERRIDE;
 
 private:
-  CurvilinearArraySpecialCoordinatesImage(const Self &); // purposely not implemented
-  void operator=(const Self &);                          // purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(CurvilinearArraySpecialCoordinatesImage);
 
   double m_LateralAngularSeparation;    // in radians
   double m_RadiusSampleSize;

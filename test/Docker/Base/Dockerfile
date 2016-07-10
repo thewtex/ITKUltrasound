@@ -88,10 +88,10 @@ RUN git clone https://gitlab.kitware.com/vtk/vtk.git VTK && \
   cd .. && rm -rf VTK VTK-build
 
 # Build and install ITK from source.
-# 2016-05-29 master
+# 2016-07-10 master
 RUN git clone https://itk.org/ITK.git && \
   cd /usr/src/ITK && \
-  git checkout f4f57b4d0decf430bd979bebe6945f832b113387 && \
+  git checkout 40b6c5155932e60de891bbd68a35fe654cf5137d && \
   mkdir /usr/src/ITK-build && \
   cd /usr/src/ITK-build && \
   cmake -G Ninja \

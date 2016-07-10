@@ -83,8 +83,7 @@ protected:
   virtual void ThreadedGenerateData( const OutputImageRegionType & outputRegionForThread, ThreadIdType threadId ) ITK_OVERRIDE;
 
 private:
-  Spectra1DImageFilter( const Self & ); // purposely not implemented
-  void operator=( const Self & ); // purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(Spectra1DImageFilter);
 
   typedef vcl_complex< ScalarType >                  ComplexType;
   typedef vnl_vector< ComplexType >                  ComplexVectorType;

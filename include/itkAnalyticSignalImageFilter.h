@@ -114,8 +114,7 @@ protected:
   virtual const ImageRegionSplitterBase* GetImageRegionSplitter() const ITK_OVERRIDE;
 
 private:
-  AnalyticSignalImageFilter( const Self& ) ITK_DELETE_FUNCTION;
-  void operator=( const Self& ) ITK_DELETE_FUNCTION;
+  ITK_DISALLOW_COPY_AND_ASSIGN(AnalyticSignalImageFilter);
 
   ImageRegionSplitterDirection::Pointer m_ImageRegionSplitter;
 };

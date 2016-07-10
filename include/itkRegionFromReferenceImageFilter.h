@@ -115,8 +115,7 @@ protected:
   virtual void GenerateOutputInformation() ITK_OVERRIDE;
 
 private:
-  RegionFromReferenceImageFilter(const Self&); //purposely not implemented
-  void operator=(const Self&); //purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(RegionFromReferenceImageFilter);
 };
 
 } // end namespace itk

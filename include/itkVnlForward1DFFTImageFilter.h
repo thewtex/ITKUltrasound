@@ -59,8 +59,7 @@ protected:
   ~VnlForward1DFFTImageFilter() { }
 
 private:
-  VnlForward1DFFTImageFilter(const Self&); //purposely not implemented
-  void operator=(const Self&); //purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(VnlForward1DFFTImageFilter);
 };
 
 } // end namespace itk

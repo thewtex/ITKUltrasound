@@ -71,8 +71,7 @@ protected:
   virtual void ThreadedGenerateData( const OutputImageRegionType& outputRegionForThread, ThreadIdType threadId ) ITK_OVERRIDE;
 
 private:
-  TimeGainCompensationImageFilter( const Self& ); // purposely not implemented
-  void operator=( const Self& ); // purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(TimeGainCompensationImageFilter);
 
   GainType m_Gain;
 };

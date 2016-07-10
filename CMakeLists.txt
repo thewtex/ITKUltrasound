@@ -73,7 +73,7 @@ if(ITKUltrasound_USE_VTK)
 endif() # ITKUltrasound_USE_VTK
 
 if(NOT ITK_SOURCE_DIR)
-  find_package(ITK REQUIRED)
+  find_package(ITK 4.11 REQUIRED)
   list(APPEND CMAKE_MODULE_PATH ${ITK_CMAKE_DIR})
   include(ITKModuleExternal)
 else()

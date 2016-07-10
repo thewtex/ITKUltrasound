@@ -554,8 +554,7 @@ protected:
   const TransformType * GetSliceInverseTransform( IndexValueType sliceIndex ) const;
 
 private:
-  SliceSeriesSpecialCoordinatesImage(const Self &); // purposely not implemented
-  void operator=(const Self &);                          // purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(SliceSeriesSpecialCoordinatesImage);
 
   typename SliceImageType::Pointer      m_SliceImage;
   typename SliceTransformsType::Pointer m_SliceTransforms;

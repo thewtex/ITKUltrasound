@@ -121,8 +121,7 @@ protected:
   typedef RegionFromReferenceImageFilter< OutputImageType, OutputImageType >                     ROIType;
 
 private:
-  BModeImageFilter( const Self& ); // purposely not implemented
-  void operator=( const Self& ); // purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(BModeImageFilter);
 
   typename AnalyticType::Pointer         m_AnalyticFilter;
   typename ComplexToModulusType::Pointer m_ComplexToModulusFilter;

@@ -81,8 +81,7 @@ protected:
   virtual void ThreadedGenerateData( const OutputImageRegionType&, ThreadIdType threadID ) ITK_OVERRIDE;
 
 private:
-  FFTWComplexToComplex1DFFTImageFilter(const Self&); //purposely not implemented
-  void operator=(const Self&); //purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(FFTWComplexToComplex1DFFTImageFilter);
 
   /** Destroy FFTW Plans and associated buffers. */
   void DestroyPlans();

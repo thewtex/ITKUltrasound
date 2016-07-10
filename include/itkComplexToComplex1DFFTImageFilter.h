@@ -105,8 +105,7 @@ protected:
   TransformDirectionType m_TransformDirection;
 
 private:
-  ComplexToComplex1DFFTImageFilter( const Self& );
-  void operator=( const Self& );
+  ITK_DISALLOW_COPY_AND_ASSIGN(ComplexToComplex1DFFTImageFilter);
 
   ImageRegionSplitterDirection::Pointer m_ImageRegionSplitter;
 };

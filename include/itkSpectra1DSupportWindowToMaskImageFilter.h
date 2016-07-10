@@ -72,8 +72,7 @@ protected:
   virtual void GenerateData() ITK_OVERRIDE;
 
 private:
-  Spectra1DSupportWindowToMaskImageFilter( const Self & ); // purposely not implemented
-  void operator=( const Self & ); // purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(Spectra1DSupportWindowToMaskImageFilter);
 
   IndexType m_MaskIndex;
 

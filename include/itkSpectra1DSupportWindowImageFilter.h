@@ -86,8 +86,7 @@ protected:
   virtual void PrintSelf( std::ostream & os, Indent indent ) const ITK_OVERRIDE;
 
 private:
-  Spectra1DSupportWindowImageFilter( const Self & ); // purposely not implemented
-  void operator=( const Self & ); // purposely not implemented
+  ITK_DISALLOW_COPY_AND_ASSIGN(Spectra1DSupportWindowImageFilter);
 
   FFT1DSizeType m_FFT1DSize;
   SizeValueType m_Step;

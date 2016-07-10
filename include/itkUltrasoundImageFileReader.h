@@ -73,8 +73,7 @@ protected:
   virtual void GenerateOutputInformation() ITK_OVERRIDE;
 
 private:
-  UltrasoundImageFileReader( const Self& ) ITK_DELETE_FUNCTION;
-  void operator=( const Self& ) ITK_DELETE_FUNCTION;
+  ITK_DISALLOW_COPY_AND_ASSIGN(UltrasoundImageFileReader);
 };
 
 } // end namespace itk
