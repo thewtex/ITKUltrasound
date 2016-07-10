@@ -18,6 +18,7 @@ set(UltrasoundTests
   itkHDF5UltrasoundImageIOCanReadITKImageTest.cxx
   itkInverseScanConvertPhasedArray3DSpecialCoordinatesImageTest.cxx
   itkReplaceNonFiniteImageFilterTest.cxx
+  itkScanConvertImageFilterCurvilinearArrayTest.cxx
   itkScanConvertPhasedArray3DSpecialCoordinatesImageTest.cxx
   itkSliceSeriesSpecialCoordinatesImageTest.cxx
   itkSpectra1DImageFilterTest.cxx
@@ -197,6 +198,15 @@ itk_add_test(NAME itkInverseScanConvertPhasedArray3DSpecialCoordinatesImageTest
     DATA{Baseline/itkInverseScanConvertPhasedArray3DSpecialCoordinatesImageTestOutput.mha}
   itkInverseScanConvertPhasedArray3DSpecialCoordinatesImageTest
     ${ITK_TEST_OUTPUT_DIR}/itkInverseScanConvertPhasedArray3DSpecialCoordinatesImageTestOutput.mha
+    )
+itk_add_test(NAME itkScanConvertImageFilterCurvilinearArrayTest
+  COMMAND UltrasoundTestDriver
+  #--compare
+    #${ITK_TEST_OUTPUT_DIR}/itkScanConvertImageFilterCurvilinearArrayTestOutput.mha
+    #DATA{Baseline/itkScanConvertImageFilterCurvilinearArrayTestOutput.mha}
+  itkScanConvertImageFilterCurvilinearArrayTest
+    DATA{Input/curvilinear_envelope_with_metadata.mha}
+    ${ITK_TEST_OUTPUT_DIR}/itkScanConvertImageFilterCurvilinearArrayTestOutput.mha
     )
 itk_add_test(NAME itkScanConvertPhasedArray3DSpecialCoordinatesImageTest
   COMMAND UltrasoundTestDriver
