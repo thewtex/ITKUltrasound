@@ -60,6 +60,16 @@ public:
   /** Method for creation through the object factory. */
   itkNewMacro( Self );
 
+  enum ResamplingMethod {
+    ITK_NEAREST_NEIGHBOR = 0,
+    ITK_LINEAR,
+    ITK_WINDOWED_SINC
+  };
+
+  /** Set/Get the ScanConversionResamplingMethod. */
+  itkSetMacro( Method, ResamplingMethod );
+  itkGetConstMacro( Method, ResamplingMethod );
+
 protected:
   ScanConvertImageFilter();
   ~ScanConvertImageFilter() {}
@@ -74,6 +84,8 @@ protected:
 
 private:
   ITK_DISALLOW_COPY_AND_ASSIGN(ScanConvertImageFilter);
+
+  ResamplingMethod m_Method;
 };
 
 } // end namespace itk

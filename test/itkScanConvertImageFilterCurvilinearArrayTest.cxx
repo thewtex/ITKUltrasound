@@ -43,23 +43,31 @@ int itkScanConvertImageFilterCurvilinearArrayTest( int argc, char* argv[] )
   ReaderType::Pointer reader = ReaderType::New();
   reader->SetFileName( inputImageFileName );
 
+  typedef itk::ScanConvertImageFilter< InputImageType, OutputImageType > ScanConverterType;
+  ScanConverterType::Pointer scanConverter = ScanConverterType::New();
+  scanConverter->SetInput( reader->GetOutput() );
+
+  EXERCISE_BASIC_OBJECT_METHODS( scanConverter, ScanConvertImageFilter, ImageToImageFilter );
+
+  const ScanConverterType::ResamplingMethod method = ScanConverterType::ITK_NEAREST_NEIGHBOR;
+  scanConverter->SetMethod( method );
+  TEST_SET_GET_VALUE( method, scanConverter->GetMethod() );
 
   typedef itk::ImageFileWriter< OutputImageType > WriterType;
   WriterType::Pointer writer = WriterType::New();
   writer->SetFileName( outputImageFileName );
-  //writer->SetInput( scanConverter->GetOutput() );
+  writer->SetInput( scanConverter->GetOutput() );
   writer->SetUseCompression( true );
 
   try
     {
-    //writer->Update();
+    writer->Update();
     }
   catch( itk::ExceptionObject & error )
     {
     std::cerr << "Error while resampling data: " << error << std::endl;
     return EXIT_FAILURE;
     }
-  //std::cout << scanConverter << std::endl;
 
   return EXIT_SUCCESS;
 }

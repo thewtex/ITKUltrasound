@@ -25,7 +25,7 @@ namespace itk
 
 template < typename TInputImage, typename TOutputImage >
 ScanConvertImageFilter< TInputImage, TOutputImage >
-::ScanConvertImageFilter()
+::ScanConvertImageFilter(): m_Method( ITK_NEAREST_NEIGHBOR )
 {
 }
 
@@ -36,6 +36,8 @@ ScanConvertImageFilter< TInputImage, TOutputImage >
 ::PrintSelf( std::ostream& os, Indent indent ) const
 {
   Superclass::PrintSelf( os, indent );
+
+  os << indent << "Method: " << this->m_Method << std::endl;
 }
 
 
